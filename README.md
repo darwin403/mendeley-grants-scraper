@@ -2,11 +2,11 @@
 
 This selenium script `scrape.py` scrapes all the active research grants for a specific discipline from [https://www.mendeley.com/research-funding/opportunities?discipline=medicine](https://www.mendeley.com/research-funding/opportunities?discipline=medicine) from their Elasticsearch API endpoint! It creates a dump `data.xlsx` with the following columns.
 
-| Grant Name                                                   | Deadline    | Group                                     | Funder                                                                          | Amount              | ... |
-| ------------------------------------------------------------ | ----------- | ----------------------------------------- | ------------------------------------------------------------------------------- | ------------------- | --- |
-| Rural Emergency Medical Communications Demonstration Project | 24 Jun 2020 | Contract, tender or cooperative agreement | U.S. Department of Homeland Security                                            | Up to 2,000,000 USD | ... |
-| Special Call under SATYAM to fight against COVID 19          | 31 May 2020 | Programs and projects                     | Department of Science and Technology, Ministry of Science and Technology, India | 1,500,000 INR       | ... |
-| ...                                                          | ...         | ....                                      | ...                                                                             | ...                 | ... |
+| Grant Name                                                   | Last Update | Deadline    | Group                                     | Funder                                                                          | Amount              | ... |
+| ------------------------------------------------------------ | ----------- | ----------- | ----------------------------------------- | ------------------------------------------------------------------------------- | ------------------- | --- |
+| Rural Emergency Medical Communications Demonstration Project | 21 Feb 2020 | 24 Jun 2020 | Contract, tender or cooperative agreement | U.S. Department of Homeland Security                                            | Up to 2,000,000 USD | ... |
+| Special Call under SATYAM to fight against COVID 19          | 1 Jan 2019  | 31 May 2020 | Programs and projects                     | Department of Science and Technology, Ministry of Science and Technology, India | 1,500,000 INR       | ... |
+| ...                                                          | ...         | ...         | ....                                      | ...                                                                             | ...                 | ... |
 
 # Installation
 

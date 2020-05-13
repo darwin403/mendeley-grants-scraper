@@ -64,7 +64,7 @@ print("Total %s results found." % total)
 # create dump file
 with open('data.xlsx', 'w+', encoding='utf-8') as h:
     doc = csv.writer(h, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
-    doc.writerow(['Name', 'Deadline', 'Group', 'Funder', 'Amount',
+    doc.writerow(['Name', 'Last Updated', 'Deadline', 'Group', 'Funder', 'Amount',
                   'Type', 'Areas', 'Description', 'Eligibility', 'Contact', 'Source', 'Link'])
 
 # iterate through each page and save result
@@ -86,6 +86,8 @@ for page in range(0, max_pages+1):
             i = item["_source"]
             try:
                 grant_name = i["name"]
+                grant_lastupdate = parse(i["lastUpdateDate"]).strftime(
+                    "%d %b %Y") if "lastUpdateDate" in i else None
                 grant_deadline = parse(i["upcomingDueDate"]).strftime(
                     "%d %b %Y") if "upcomingDueDate" in i else None
                 grant_group = i["groupTypeDescription"]
@@ -103,7 +105,7 @@ for page in range(0, max_pages+1):
                 grant_source = i["recordSource"]
                 grant_link = "https://www.mendeley.com/research-funding/opportunities/%s" % i["id"]
 
-                doc.writerow([grant_name, grant_deadline, grant_group, grant_funder, grant_amount,
+                doc.writerow([grant_name, grant_lastupdate, grant_deadline, grant_group, grant_funder, grant_amount,
                               grant_type, grant_areas, grant_description, grant_eligibility, grant_contact, grant_source, grant_link])
             except Exception as e:
                 print("Error while processing grant ID: %s" % i["id"], e)
